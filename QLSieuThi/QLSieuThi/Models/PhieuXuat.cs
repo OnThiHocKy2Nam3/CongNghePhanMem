@@ -8,13 +8,7 @@ namespace QLSieuThi.Models
 {
     class PhieuXuat
     {
-        public PhieuXuat(){}
         public string Ma { get; set; }
-        public DateTime Ngay { get; set; }
-        public string NoiDung { get; set; }
-        public string KhachHangMa { get; set; }
-        public string NhanVienMa { get; set; }
-        public double TongTien { get; set; }
-
+        
     }
 }

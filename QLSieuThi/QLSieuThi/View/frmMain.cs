@@ -102,7 +102,7 @@ namespace QLSieuThi
         {
             TabPage tabPageBanHang = new TabPage();
             tabPageBanHang.Text = "Bán hàng";
-            UPhieuXuat px = new UPhieuXuat();
+            UHoaDon px = new UHoaDon();
             px.Dock = DockStyle.Fill;
             tabPageBanHang.Controls.Add(px);
             tabControlMain.TabPages.Add(tabPageBanHang);
@@ -268,7 +268,7 @@ namespace QLSieuThi
         {
             TabPage tabPageDSPX = new TabPage();
             tabPageDSPX.Text = "Danh sách xuất hàng";
-            uDanhSachPX dsPX = new uDanhSachPX();
+            uDanhSachHD dsPX = new uDanhSachHD();
             dsPX.Dock = DockStyle.Fill;
             tabPageDSPX.Controls.Add(dsPX);
             tabControlMain.TabPages.Add(tabPageDSPX);
@@ -353,6 +353,18 @@ namespace QLSieuThi
         private void txttukhoa_MouseClick(object sender, MouseEventArgs e)
         {
             txttukhoa.Text = "";
+        }
+
+        private void nvbiPx_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
+            TabPage tabPageXuatHang = new TabPage();
+            tabPageXuatHang.Text = "Xuất hàng";
+            UPhieuXuat px = new UPhieuXuat();
+            px.Dock = DockStyle.Fill;
+            tabPageXuatHang.Controls.Add(px);
+            tabControlMain.TabPages.Add(tabPageXuatHang);
+            tabControlMain.SelectTab(tabPageXuatHang);
         }
     }
 }

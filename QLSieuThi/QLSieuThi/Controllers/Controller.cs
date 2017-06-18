@@ -32,8 +32,8 @@ namespace QLSieuThi.Controllers
                 }
                 nv.NgaySinh = DateTime.Parse(table.Rows[i]["ngaysinh"].ToString().Trim());
                 nv.SoDienThoai = table.Rows[i]["sodienthoai"].ToString().Trim();
-                nv.Luong = Double.Parse(table.Rows[i]["luong"].ToString().Trim());
-                nv.PhongBanMa = table.Rows[i]["phongbanma"].ToString().Trim();
+                //nv.Luong = Double.Parse(table.Rows[i]["luong"].ToString().Trim());
+                //nv.PhongBanMa = table.Rows[i]["phongbanma"].ToString().Trim();
                 nv.DiaChi = table.Rows[i]["diachi"].ToString().Trim();
                 nv.MatKhau = table.Rows[i]["matkhau"].ToString().Trim();
                 list[i] = nv;
@@ -57,28 +57,28 @@ namespace QLSieuThi.Controllers
                 list[i].Ma = table.Rows[i]["ma"].ToString().Trim();
                 list[i].Ngay = DateTime.Parse(table.Rows[i]["ngay"].ToString().Trim());
                 list[i].NhaCungCapMa = table.Rows[i]["nhacungcapma"].ToString().Trim();
-                list[i].NguoiGiaoMa = table.Rows[i]["nguoigiaoma"].ToString().Trim();
-                list[i].NoiDung = table.Rows[i]["noidung"].ToString().Trim();
+              //  list[i].NguoiGiaoMa = table.Rows[i]["nguoigiaoma"].ToString().Trim();
+              //  list[i].NoiDung = table.Rows[i]["noidung"].ToString().Trim();
                 double.TryParse(table.Rows[i]["tongtien"].ToString().Trim(), out tongtien);
                 list[i].TongTien = tongtien;
             }
             return list;
         }
 
-        public PhieuXuat[] getList_PhieuXuat()
+        public HoaDon[] getList_HoaDon()
         {
-            DataTable table = dataAccess.Query("select *from PhieuXuat order by ma desc");
+            DataTable table = dataAccess.Query("select *from HoaDon order by ma desc");
             int n = table.Rows.Count;
             int i;
             double tongtien = 0;
             if (n == 0) return null;
-            PhieuXuat[] list = new PhieuXuat[n];
+            HoaDon[] list = new HoaDon[n];
             for (i = 0; i < n; i++)
             {
-                list[i] = new PhieuXuat();
+                list[i] = new HoaDon();
                 list[i].Ma = table.Rows[i]["ma"].ToString().Trim();
                 list[i].Ngay = DateTime.Parse(table.Rows[i]["ngay"].ToString().Trim());
-                list[i].NoiDung = table.Rows[i]["noidung"].ToString().Trim();
+               // list[i].NoiDung = table.Rows[i]["noidung"].ToString().Trim();
                 list[i].KhachHangMa = table.Rows[i]["khachhangma"].ToString().Trim();
                 list[i].NhanVienMa = table.Rows[i]["nhanvienma"].ToString().Trim();
                 double.TryParse(table.Rows[i]["tongtien"].ToString().Trim(), out tongtien);
@@ -113,20 +113,20 @@ namespace QLSieuThi.Controllers
             return list;
         }
 
-        public ChiTietPhieuXuat[] getList_ChiTietPhieuXuat(string ma)
+        public ChiTietHoaDon[] getList_ChiTietHoaDon(string ma)
         {
-            DataTable table = dataAccess.Query("select *from ChiTietPhieuXuat where phieuxuatma='"+ma+"'");
+            DataTable table = dataAccess.Query("select *from ChiTietHoaDon where hoadonma='"+ma+"'");
             int n = table.Rows.Count;
             int i;
             if (n == 0) return null;
-            ChiTietPhieuXuat[] list = new ChiTietPhieuXuat[n];
+            ChiTietHoaDon[] list = new ChiTietHoaDon[n];
             double dongia = 0, thanhtien = 0;
             for (i = 0; i < n; i++)
             {
-                list[i] = new ChiTietPhieuXuat();
+                list[i] = new ChiTietHoaDon();
                 list[i].Ma = table.Rows[i]["ma"].ToString().Trim();
-                list[i].PhieuXuatMa = table.Rows[i]["phieuxuatma"].ToString().Trim();
-                list[i].KhoMa = table.Rows[i]["khoma"].ToString().Trim();
+                list[i].HoaDonMa = table.Rows[i]["hoadonma"].ToString().Trim();
+              //  list[i].KhoMa = table.Rows[i]["khoma"].ToString().Trim();
                 list[i].HangHoaMa = table.Rows[i]["hanghoama"].ToString().Trim();
                 list[i].SoLuong = int.Parse(table.Rows[i]["soluong"].ToString().Trim());
                 list[i].DonVi = table.Rows[i]["donvi"].ToString().Trim();
@@ -153,9 +153,9 @@ namespace QLSieuThi.Controllers
                 list[i].Ma = table.Rows[i]["ma"].ToString().Trim();
                 list[i].Ten = table.Rows[i]["ten"].ToString().Trim();
                 list[i].DiaChi = table.Rows[i]["diachi"].ToString().Trim();
-                list[i].DienThoai = table.Rows[i]["dienthoai"].ToString().Trim();
-                list[i].MaSoThue = int.Parse(table.Rows[i]["masothue"].ToString().Trim());
-                list[i].Email = table.Rows[i]["email"].ToString().Trim();
+                list[i].DienThoai = table.Rows[i]["sodienthoai"].ToString().Trim();
+                //list[i].MaSoThue = int.Parse(table.Rows[i]["masothue"].ToString().Trim());
+                //list[i].Email = table.Rows[i]["email"].ToString().Trim();
             }
             return list;
         }
@@ -226,23 +226,23 @@ namespace QLSieuThi.Controllers
             return list;
         }
     
-        public NhomHang[] getList_NhomHang()
-        {
-            DataTable table = dataAccess.Query("select *from NhomHang");
-            int n = table.Rows.Count;
-            int i;
-            if (n == 0) return null;
-            NhomHang[] list = new NhomHang[n];
+        //public NhomHang[] getList_NhomHang()
+        //{
+        //    DataTable table = dataAccess.Query("select *from NhomHang");
+        //    int n = table.Rows.Count;
+        //    int i;
+        //    if (n == 0) return null;
+        //    NhomHang[] list = new NhomHang[n];
 
-            for (i = 0; i < n; i++)
-            {
-                list[i] = new NhomHang();
-                list[i].Ma = table.Rows[i]["ma"].ToString().Trim();
-                list[i].Ten = table.Rows[i]["ten"].ToString().Trim();
+        //    for (i = 0; i < n; i++)
+        //    {
+        //        list[i] = new NhomHang();
+        //        list[i].Ma = table.Rows[i]["ma"].ToString().Trim();
+        //        list[i].Ten = table.Rows[i]["ten"].ToString().Trim();
                 
-            }
-            return list;
-        }
+        //    }
+        //    return list;
+        //}
         public DonViQuyDoi[] getList_DonVi()
         {
             DataTable table = dataAccess.Query("select *from DonViQuyDoi");
@@ -370,11 +370,11 @@ namespace QLSieuThi.Controllers
          }
 
 
-        public void insertChiTietPX(ChiTietPhieuXuat ctpx,string ma)
+        public void insertChiTietHD(ChiTietHoaDon ctpx,string ma)
         {
             SqlParameter[] para =
         {
-                new SqlParameter("phieuxuatma",ma),
+                new SqlParameter("hoadon",ma),
                 new SqlParameter("hanghoama",ctpx.HangHoaMa),
                 new SqlParameter("soluong",ctpx.SoLuong),
                 new SqlParameter("donvi",ctpx.DonVi),
@@ -382,6 +382,18 @@ namespace QLSieuThi.Controllers
                 new SqlParameter("dongia",ctpx.DonGia)
                
 
+            };
+            dataAccess.Query("procedure_insertChiTietHoaDon", para);
+
+        }
+        public void insertChiTietPX(ChiTietPhieuXuat ctpx, string ma)
+        {
+            SqlParameter[] para =
+        {
+                new SqlParameter("phieuxuatma",ma),
+                new SqlParameter("hanghoama",ctpx.HangHoaMa),
+                new SqlParameter("soluong",ctpx.soluong),
+                new SqlParameter("donvi",ctpx.donvi),
             };
             dataAccess.Query("procedure_insertChiTietPhieuXuat", para);
 
@@ -391,9 +403,7 @@ namespace QLSieuThi.Controllers
 
             SqlParameter[] para =
          {
-                new SqlParameter("nhacungcapma",pn.NhaCungCapMa),
-                new SqlParameter("manguoigiao",pn.NguoiGiaoMa),
-                new SqlParameter("noidung",pn.NoiDung),
+                new SqlParameter("nhacungcapma",pn.NhaCungCapMa),            
                 new SqlParameter("tongtien",pn.TongTien)
            };
             dataAccess.Query("procedure_insertPhieuNhap", para);
@@ -401,15 +411,24 @@ namespace QLSieuThi.Controllers
         }
 
       
-        public void insertPX(PhieuXuat px)
+        public void insertHD(HoaDon px)
         {
 
             SqlParameter[] para =
          {
-                new SqlParameter("noidung",px.NoiDung),
+                
                 new SqlParameter("khachhangma",px.KhachHangMa),
                 new SqlParameter("nhanvienma",px.NhanVienMa),
                 new SqlParameter("tongtien",px.TongTien)
+         };
+            dataAccess.Query("procedure_insertHoaDon", para);
+        }
+        public void insertPX(PhieuXuat px)
+        {
+            SqlParameter[] para =
+      {
+
+                new SqlParameter("ma",px.Ma),             
          };
             dataAccess.Query("procedure_insertPhieuXuat", para);
         }
@@ -429,7 +448,16 @@ namespace QLSieuThi.Controllers
                 return table.Rows[0]["ma"].ToString().Trim();
             return ma;
         }
-      
+        public string get_HoaDonma(HoaDon hd)
+        {
+            DataTable table = dataAccess.Query(" select dbo.auto_ma_HoaDon()as ma");
+            string ma = "";
+            if (table.Rows.Count == 1)
+                return table.Rows[0]["ma"].ToString().Trim();
+            return ma;
+        }
+
+
         public float getPhanTramKhuyenMai(string ma)
         {
             DataTable dt = dataAccess.Query("select KhuyenMai.PhanTramKhuyenMai from KhuyenMai inner join HangHoa on HangHoa.KhuyenMaiMa=KhuyenMai.ma where KhuyenMai.ngaybatdau<GETDATE() and KhuyenMai.ngayketthuc>GETDATE() and HangHoa.ma='" + ma + "'");
@@ -462,7 +490,7 @@ namespace QLSieuThi.Controllers
         public int getTheKhachHang(string ma)
         {
 
-            DataTable dt = dataAccess.Query("select TheKhachHang.diemtichluy from TheKhachHang inner join KhachHang on KhachHang.TheKhachHangMa=TheKhachHang.ma where KhachHang.ma='" + ma + "'");
+            DataTable dt = dataAccess.Query("select diemtichluy from KhachHang where KhachHang.ma='" + ma + "'");
             int diemtichluy = 0;
             if (dt.Rows.Count == 1)
                 return int.Parse(dt.Rows[0]["diemtichluy"].ToString().Trim());

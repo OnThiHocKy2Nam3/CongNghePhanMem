@@ -1,6 +1,6 @@
 ﻿namespace QLSieuThi.View
 {
-    partial class uDanhSachPX
+    partial class uDanhSachHD
     {
         /// <summary> 
         /// Required designer variable.

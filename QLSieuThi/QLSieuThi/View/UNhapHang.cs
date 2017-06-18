@@ -44,9 +44,7 @@ namespace QLSieuThi.View
             cbb_PN_MaMatHang.DataSource = controller.getList_HangHoa();
             cbb_PN_MaMatHang.DisplayMember = "ma";
             cbb_PN_MaMatHang.ValueMember = "ma";
-            cbbNhomHang.DataSource = controller.getList_NhomHang();
-            cbbNhomHang.DisplayMember = "ten";
-            cbbNhomHang.ValueMember = "ma";
+         
             cbbPNDonVi.DataSource = controller.getList_DonVi();
             cbbPNDonVi.DisplayMember = "ten";
             cbbPNDonVi.ValueMember = "ma";
@@ -64,24 +62,14 @@ namespace QLSieuThi.View
         double tongtien = 0;
         private bool CheckPN()
         {
-            if (txtPNNguoiGiao.Text.ToString().Trim().Equals(""))
-            {
-                errPNNguoiGiao.SetError(txtPNNguoiGiao, "nhap ten nguoi giao");
-                return false;
-            }
-            errPNNguoiGiao.Clear();
+           
             if (cbbPNKhoHang.Text.ToString().Trim().Equals(""))
             {
                 errPNNguoiGiao.SetError(cbbPNKhoHang, "nhap ten nguoi giao");
                 return false;
             }
             errPNNguoiGiao.Clear();
-            if (rtbPNNoiDungNhap.Text.ToString().Trim().Equals(""))
-            {
-                errPNNguoiGiao.SetError(rtbPNNoiDungNhap, "nhap ten nguoi giao");
-                return false;
-            }
-            errPNNguoiGiao.Clear();
+            
             if (txtPNTenHang.Text.ToString().Trim().Equals(""))
             {
                 errPNNguoiGiao.SetError(txtPNTenHang, "nhap ten nguoi giao");
@@ -135,9 +123,9 @@ namespace QLSieuThi.View
      
             PhieuNhap pn = new PhieuNhap();
             pn.Ma = controller.getMaPN(pn);
-            pn.NguoiGiaoMa = txtPNNguoiGiao.Text.ToString().Trim();
+            //pn.NguoiGiaoMa = txtPNNguoiGiao.Text.ToString().Trim();
             pn.NhaCungCapMa = cbbPNNhaCungCap.SelectedValue.ToString().Trim();
-            pn.NoiDung = rtbPNNoiDungNhap.Text.ToString().Trim();
+          //  pn.NoiDung = rtbPNNoiDungNhap.Text.ToString().Trim();
             pn.TongTien = tongtien;
             controller.insertPN(pn);
             ChiTietPhieuNhap ctpn = new ChiTietPhieuNhap();
@@ -162,6 +150,16 @@ namespace QLSieuThi.View
         }
 
         private void cbbPNKhoHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbNhomHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

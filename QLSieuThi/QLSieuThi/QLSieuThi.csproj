@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Models\ChiTietPhieuNhap.cs" />
+    <Compile Include="Models\ChiTietHoaDon.cs" />
     <Compile Include="Models\ChiTietPhieuXuat.cs" />
     <Compile Include="Models\ChucVu.cs" />
     <Compile Include="Controllers\DataAccess.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Models\NhanVien.cs" />
     <Compile Include="Models\NhomHang.cs" />
     <Compile Include="Models\PhieuNhap.cs" />
+    <Compile Include="Models\HoaDon.cs" />
     <Compile Include="Models\PhieuXuat.cs" />
     <Compile Include="Models\PhongBan.cs" />
     <Compile Include="Models\TheKhachHang.cs" />
@@ -111,17 +113,23 @@
     <Compile Include="View\UDanhSachPN.Designer.cs">
       <DependentUpon>UDanhSachPN.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\uDanhSachPX.cs">
+    <Compile Include="View\uDanhSachHD.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\uDanhSachPX.Designer.cs">
-      <DependentUpon>uDanhSachPX.cs</DependentUpon>
+    <Compile Include="View\uDanhSachHD.Designer.cs">
+      <DependentUpon>uDanhSachHD.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UNhapHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\UNhapHang.Designer.cs">
       <DependentUpon>UNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UHoaDon.Designer.cs">
+      <DependentUpon>UHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UPhieuXuat.cs">
       <SubType>UserControl</SubType>
@@ -160,11 +168,14 @@
     <EmbeddedResource Include="View\UDanhSachPN.resx">
       <DependentUpon>UDanhSachPN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\uDanhSachPX.resx">
-      <DependentUpon>uDanhSachPX.cs</DependentUpon>
+    <EmbeddedResource Include="View\uDanhSachHD.resx">
+      <DependentUpon>uDanhSachHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UNhapHang.resx">
       <DependentUpon>UNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UHoaDon.resx">
+      <DependentUpon>UHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UPhieuXuat.resx">
       <DependentUpon>UPhieuXuat.cs</DependentUpon>

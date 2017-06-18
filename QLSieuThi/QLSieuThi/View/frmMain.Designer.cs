@@ -75,6 +75,8 @@
             this.errTenHang = new System.Windows.Forms.ErrorProvider(this.components);
             this.errPXMaNV = new System.Windows.Forms.ErrorProvider(this.components);
             this.errpxKhachHang = new System.Windows.Forms.ErrorProvider(this.components);
+            this.nvbiPhieuXuat = new DevExpress.XtraNavBar.NavBarItem();
+            this.nvbiPx = new DevExpress.XtraNavBar.NavBarItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.tabControlMain.SuspendLayout();
@@ -114,6 +116,7 @@
             this.nbiTrangChu,
             this.nbiTrangChu_NhapHang,
             this.nbiTrangChu_BanHang,
+            this.nvbiPx,
             this.nbiTrangChu_QLNhanVien,
             this.nbiTrangChu_QLKhach,
             this.nbiTrangChu_ThongKe,
@@ -140,7 +143,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiTrangChu_QLNhanVien),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiTrangChu_QLKhach),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiTrangChu_ThongKe),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiTrangChu_HuongDan)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiTrangChu_HuongDan),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nvbiPx)});
             this.nbgTrangChu.Name = "nbgTrangChu";
             // 
             // nbiTrangChu
@@ -536,6 +540,20 @@
             // 
             this.errpxKhachHang.ContainerControl = this;
             // 
+            // nvbiPhieuXuat
+            // 
+            this.nvbiPhieuXuat.Caption = "Xuất kho";
+            this.nvbiPhieuXuat.LargeImage = ((System.Drawing.Image)(resources.GetObject("nvbiPhieuXuat.LargeImage")));
+            this.nvbiPhieuXuat.Name = "nvbiPhieuXuat";
+            this.nvbiPhieuXuat.SmallImage = ((System.Drawing.Image)(resources.GetObject("nvbiPhieuXuat.SmallImage")));
+            // 
+            // nvbiPx
+            // 
+            this.nvbiPx.Caption = "Phiếu Xuất";
+            this.nvbiPx.Name = "nvbiPx";
+            this.nvbiPx.SmallImage = ((System.Drawing.Image)(resources.GetObject("nvbiPx.SmallImage")));
+            this.nvbiPx.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nvbiPx_LinkClicked);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,6 +639,8 @@
         private System.Windows.Forms.TextBox txttukhoa;
         private System.Windows.Forms.TabPage tphuongdan;
         private System.Windows.Forms.RichTextBox rtbhuongdan1;
+        private DevExpress.XtraNavBar.NavBarItem nvbiPhieuXuat;
+        private DevExpress.XtraNavBar.NavBarItem nvbiPx;
     }
 }
 
